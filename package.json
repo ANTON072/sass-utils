@@ -1,10 +1,13 @@
 {
   "name": "sass-utils",
   "scripts": {
-    "sass": "sass scss:css",
+    "build": "sass --source-map scss/main.scss css/main.css && postcss css/main.css --output css/main.css",
     "lint": "stylelint \"scss/**/*.scss\""
   },
   "devDependencies": {
+    "postcss": "^8.4.31",
+    "postcss-cli": "^10.1.0",
+    "postcss-sort-media-queries": "^5.2.0",
     "prettier": "^3.0.3",
     "sass": "^1.69.5",
     "stylelint": "^15.11.0",

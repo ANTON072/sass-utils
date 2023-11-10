@@ -1,0 +1,29 @@
+.c-button {
+  --text-color: #000;
+  --bg-color: #fff;
+
+  display: inline-block;
+  padding: 0.5em 1em;
+  color: var(--text-color);
+  cursor: pointer;
+  background-color: var(--bg-color);
+
+  &[data-color="primary"] {
+    --text-color: #fff;
+    --bg-color: #007bff;
+  }
+
+  &[data-color="secondary"] {
+    --text-color: #000;
+    --bg-color: #FC0;
+  }
+
+  &[aria-disabled] {
+    opacity: 0.5;
+  }
+
+  &[aria-selected="true"] {
+    --text-color: #fff;
+    --bg-color: #f00;
+  }
+}

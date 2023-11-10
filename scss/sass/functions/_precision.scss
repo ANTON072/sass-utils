@@ -6,5 +6,6 @@
 // @return {Number} - 丸めた結果の数値
 @function precision($value, $precision) {
   $factor: math.pow(10, $precision);
+
   @return math.div(round($value * $factor), $factor);
 }

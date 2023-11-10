@@ -1,13 +1,13 @@
 {
   "name": "sass-utils",
   "scripts": {
-    "sass": "sass scss:css"
+    "sass": "sass scss:css",
+    "lint": "stylelint \"scss/**/*.scss\""
   },
   "devDependencies": {
     "prettier": "^3.0.3",
     "sass": "^1.69.5",
     "stylelint": "^15.11.0",
-    "stylelint-config-standard": "^34.0.0",
-    "stylelint-scss": "^5.3.1"
+    "stylelint-config-standard-scss": "^11.1.0"
   }
 }

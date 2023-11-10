@@ -5,10 +5,8 @@
 }
 
 html {
-  -moz-text-size-adjust: none;
-  -webkit-text-size-adjust: none;
-  text-size-adjust: none;
-  height: -webkit-fill-available;
+  height: fill-available;
+
   // スマホを横にしても文字サイズを大きくしない
   text-size-adjust: 100%;
 }
@@ -28,18 +26,15 @@ dd {
 
 body {
   min-height: 100vh;
-  min-height: -webkit-fill-available;
+  min-height: fill-available;
   overflow-x: hidden;
+  line-height: 1.5;
+
 }
 
 ul[role="list"],
 ol[role="list"] {
   list-style: none;
-}
-
-body {
-  min-height: 100vh;
-  line-height: 1.5;
 }
 
 h1,
@@ -61,7 +56,7 @@ h4 {
 
 a:not([class]) {
   text-decoration-skip-ink: auto;
-  color: currentColor;
+  color: currentcolor;
 }
 
 picture,
@@ -91,7 +86,7 @@ textarea:not([rows]) {
 
 svg {
   overflow: visible;
-  fill: currentColor;
+  fill: currentcolor;
 }
 
 // ページ内リンクしたときに対象の要素がビューポートの上辺からどれぐらい離れているか？

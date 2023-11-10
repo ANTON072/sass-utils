@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "../variables" as *;
 
 // メディアクエリのmixin
@@ -9,8 +10,8 @@
 @mixin media-query($breakpoint-name, $direction: "min") {
   // マップからブレイクポイントの値を取得、もしくは数値として直接指定
   $size: if(
-    map-has-key($screen, $breakpoint-name),
-    map-get($screen, $breakpoint-name),
+    map.has-key($screen, $breakpoint-name),
+    map.get($screen, $breakpoint-name),
     $breakpoint-name
   );
 

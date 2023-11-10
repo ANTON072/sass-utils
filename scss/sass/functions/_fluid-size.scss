@@ -3,7 +3,7 @@
 @use "px2rem" as *;
 @use "precision" as *;
 @use "strip-unit" as *;
-@use "../variables" as *;
+@use "../variables/@index" as *;
 
 // clampを使った流動的なサイズを計算する関数
 // @param {String} $min-size - 最小のフォントサイズ

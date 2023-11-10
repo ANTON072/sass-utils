@@ -1,5 +1,5 @@
 @use "sass:map";
-@use "../variables" as *;
+@use "../variables/@index" as *;
 
 // メディアクエリのmixin
 // `$direction` は "min" または "max" のどちらかを指定

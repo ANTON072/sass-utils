@@ -1,4 +1,4 @@
-@use "../variables" as *;
+@use "../variables/@index" as *;
 
 // 画像などを縦横比を維持したままレスポンシブ対応するmixin
 // @param {Number} $width - 画像の横幅
@@ -7,22 +7,22 @@
   position: relative;
 
   &::before {
-    content: "";
     float: left;
     padding-top: ($height / $width) * 100%;
+    content: "";
   }
 
   &::after {
-    content: "";
     display: block;
     clear: both;
+    content: "";
   }
 
   & > :first-child {
-    height: 100%;
-    left: 0;
     position: absolute;
     top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
   }
 }

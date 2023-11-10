@@ -1,17 +1,5 @@
 @use "../sass/@index" as *;
 
 .sample {
-  @include triangle(upward, 20px, 15px, #cd5c5c);
-
-  font-size: 3px;
-
-  @include media-query("md") {
-    font-size: 5px;
-  }
-}
-
-.sample2 {
-  @include media-query("md") {
-    font-size: 5px;
-  }
+  font-size: fluid-size(16px, 100px, 100px, 2000px);
 }

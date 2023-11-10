@@ -4,11 +4,18 @@
 @use "strip-unit" as *;
 
 // pxをremに変換する（1remは16px）
-// @param {String} $px - px単位で指定されたサイズ。
+// @param {String | Number} $px - px単位で指定されたサイズ。
 // @return {String} - rem単位に変換されたサイズの計算結果
 @function px2rem($px-value) {
-  $numeric-value: strip-unit($px-value);
-  $rem-value: math.div($numeric-value, 16);
+  // 単位があるかどうかをチェックし、あれば取り除く
+  $numeric-value: if(
+    math.is-unitless($px-value),
+    $px-value,
+    strip-unit($px-value)
+  );
 
-  @return precision($rem-value, 2) + rem;
+  // 数値を16で割ってREMに変換
+  $rems: precision(math.div($numeric-value, 16) * 1rem, 2);
+
+  @return $rems;
 }

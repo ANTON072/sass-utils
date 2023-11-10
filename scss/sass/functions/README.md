@@ -39,3 +39,39 @@ output
   font-size: 5.33vw;
 }
 ```
+
+## fluid-size
+
+流動的なサイズを計算する関数
+
+input
+
+```scss
+.sample {
+  font-size: fluid-size(16px, 100px);
+}
+```
+
+output
+
+```css
+.sample {
+  font-size: clamp(1rem, 20.19vw + -6.27rem, 6.25rem);
+}
+```
+
+ブレークポイント引数に$screen文字列を使うことも可能。
+
+```scss
+.sample {
+  font-size: fluid-size(16px, 100px, "sm", "xxl");
+}
+```
+
+ブレークポイントにpx数を指定することも可能。
+
+```scss
+.sample {
+  font-size: fluid-size(16px, 100px, 100px, 2000px);
+}
+```

@@ -1,0 +1,53 @@
+@use "sass:math";
+@use "sass:map";
+@use "px2rem" as *;
+@use "precision" as *;
+@use "strip-unit" as *;
+@use "../variables" as *;
+
+// clampを使った流動的なサイズを計算する関数
+// @param {String} $min-size - 最小のフォントサイズ
+// @param {String} $max-size - 最大のフォントサイズ
+// @param {String} $min-breakpoint - 最小のブレークポイント
+// @param {String} $max-breakpoint - 最大のブレークポイント
+// @param {String} $unit - 単位
+// @return {Number} - 計算したサイズ
+@function fluid-size(
+  $min-size,
+  $max-size,
+  $min-breakpoint: "sm",
+  $max-breakpoint: "lg",
+  $unit: vw
+) {
+  // ブレークポイントがマップのキーなら値を取得、そうでなければそのまま使用
+  $min-breakpoint: if(
+    map.has-key($screen, $min-breakpoint),
+    map.get($screen, $min-breakpoint),
+    $min-breakpoint
+  );
+  $max-breakpoint: if(
+    map.has-key($screen, $max-breakpoint),
+    map.get($screen, $max-breakpoint),
+    $max-breakpoint
+  );
+  $min-size: strip-unit($min-size);
+  $max-size: strip-unit($max-size);
+  $min-breakpoint: strip-unit($min-breakpoint);
+  $max-breakpoint: strip-unit($max-breakpoint);
+
+  // 変化の比率
+  // ビューポートの幅が変わるにつれてフォントサイズがどれだけけ変化するかを計算する
+  $slope: math.div($max-size - $min-size, $max-breakpoint - $min-breakpoint);
+  $slope-to-unit: precision($slope * 100, 2);
+
+  // $slopeと$min-breakpointを使って基本的なサイズを計算
+  $intercept-rem: px2rem($min-size - $slope * $min-breakpoint);
+  $min-size-rem: px2rem($min-size);
+  $max-size-rem: px2rem($max-size);
+
+  @return clamp(
+    #{$min-size-rem},
+    #{$slope-to-unit}#{$unit} + #{$intercept-rem},
+    #{$max-size-rem}
+  );
+}

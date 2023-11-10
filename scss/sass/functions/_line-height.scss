@@ -1,0 +1,22 @@
+@use "sass:math";
+@use "precision" as *;
+
+// FigmaやXDのライン高の値を基にline-heightを計算する関数
+// @param {String} $font-size - フォントサイズ
+// @param {String} $design-line-height - デザインのline-height
+// @return {Number} - line-height
+@function line-height($font-size, $design-line-height) {
+  // フォントサイズとデザインのline-heightがどちらもピクセルか確認
+  @if unit($font-size) == "px" and unit($design-line-height) == "px" {
+    // ピクセルベースでline-heightを計算
+    @return precision(math.div($design-line-height, $font-size), 2);
+  }
+
+  // Figmaのline-heightがパーセンテージの場合
+  @if unit($design-line-height) == "%" {
+    // パーセンテージを基にline-heightを計算
+    @return precision(math.div($design-line-height, 100), 2);
+  }
+
+  @error "不正な単位が指定されました。フォントサイズとline-heightはどちらもピクセルかパーセンテージである必要があります。";
+}

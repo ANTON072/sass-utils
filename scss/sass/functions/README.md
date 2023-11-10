@@ -75,3 +75,23 @@ output
   font-size: fluid-size(16px, 100px, 100px, 2000px);
 }
 ```
+
+## line-height
+
+FigmaやXDのライン高の値を基にline-heightを計算する関数
+
+input
+
+```scss
+.sample {
+  line-height: line-height(32px, 57px);
+}
+```
+
+output
+
+```css
+.sample {
+  line-height: 1.78;
+}
+```

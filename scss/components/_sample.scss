@@ -1,5 +1,5 @@
 @use "../sass/@index" as *;
 
 .sample {
-  font-size: fluid-size(16px, 100px, 100px, 2000px);
+  line-height: line-height(32px, 57px);
 }

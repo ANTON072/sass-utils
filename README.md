@@ -25,17 +25,17 @@
 FLOCSSスタイル
 
 ```scss
-.button {
+.c-button {
   display: inline-block;
   padding: 0.5em 1em;
   cursor: pointer;
 }
-.button--primary {
+.c-button--primary {
   @extend .button
   background-color: #CCAA00;
   color: #ffffff;
 }
-.button--secondary {
+.c-button--secondary {
   @extend .button
   background-color: #FFCC00;
 }

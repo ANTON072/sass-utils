@@ -1,0 +1,14 @@
+// デスクトップサイズ: 1rem: 16px
+
+body {
+  font: 1rem/1.5 var(--font-base);
+}
+
+a {
+  color: var(--blue);
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+}

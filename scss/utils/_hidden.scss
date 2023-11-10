@@ -1,0 +1,18 @@
+@use "sass:map";
+@use "../sass/@index" as *;
+
+// <p class="u-hidden-md-up">md値より広い幅で非表示</p>
+// <p class="u-hidden-lg-down">lg値より狭い幅で非表示</p>
+@each $size in map.keys($screen) {
+  .u-hidden-#{$size}-up {
+    @include media-query($size, min) {
+      display: none;
+    }
+  }
+
+  .u-hidden-#{$size}-down {
+    @include media-query($size) {
+      display: none;
+    }
+  }
+}

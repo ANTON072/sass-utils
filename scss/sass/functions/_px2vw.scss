@@ -1,0 +1,17 @@
+@use "sass:math";
+@use "../variables" as *;
+@use "precision" as *;
+@use "strip-unit" as *;
+
+// $pxをビューポートの幅に基づいた相対的なサイズ（vw単位）に変換します。
+// @param {String} $size - デザインカンプ上のピクセル単位で指定されたサイズ。
+// @param {String} $design-width - デザインカンプの幅（デフォルトは375px）。
+// @return {String} - ビューポートの幅に基づいたサイズの計算結果（vw単位）
+@function px2vw($px, $design-width: 375px) {
+  // $pxは単位付き文字列なので、単位を取り除いた数値に変換する
+  $number: strip-unit($px);
+  $design-width-n: strip-unit($design-width);
+  $value: math.div($number, $design-width-n) * 100;
+  // 小数点以下2桁に丸める
+  @return precision($value, 2) + vw;
+}

@@ -1,0 +1,13 @@
+@use "sass:math";
+@use "../variables" as *;
+@use "precision" as *;
+@use "strip-unit" as *;
+
+// pxをremに変換する（1remは16px）
+// @param {String} $px - px単位で指定されたサイズ。
+// @return {String} - rem単位に変換されたサイズの計算結果
+@function px2rem($px-value) {
+  $numeric-value: strip-unit($px-value);
+  $rem-value: math.div($numeric-value, 16);
+  @return precision($rem-value, 2) + rem;
+}

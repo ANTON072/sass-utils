@@ -1,0 +1,12 @@
+// hoverに対応したデバイスのみにスタイルをあてるmixin
+@mixin hover() {
+  &:focus {
+    @content;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @content;
+    }
+  }
+}

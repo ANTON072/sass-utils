@@ -1,0 +1,8 @@
+// webfontのちらつき回避
+.u-fout {
+  visibility: hidden;
+
+  @at-root .wf-active & {
+    visibility: visible;
+  }
+}

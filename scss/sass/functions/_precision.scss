@@ -1,0 +1,10 @@
+@use "sass:math";
+
+// 小数点以下の桁数を指定して丸める関数
+// @param {Number} $value - 丸める数値
+// @param {Number} $precision - 丸める桁数
+// @return {Number} - 丸めた結果の数値
+@function precision($value, $precision) {
+  $factor: math.pow(10, $precision);
+  @return math.div(round($value * $factor), $factor);
+}

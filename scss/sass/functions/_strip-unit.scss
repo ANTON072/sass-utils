@@ -1,0 +1,8 @@
+@use "sass:math";
+
+// 単位付き文字列から単位を取り除く
+// @param {String} $value - 単位付き文字列
+// @return {Number} - 単位を取り除いた数値
+@function strip-unit($value) {
+  @return math.div($value, 1px);
+}

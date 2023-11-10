@@ -1,0 +1,25 @@
+@use "../variables" as *;
+
+// メディアクエリのmixin
+// `$direction` は "min" または "max" のどちらかを指定
+
+// ブレイクポイントの値を取得するmixin
+// `$breakpoint-name` はブレイクポイントの名前、もしくは数値
+// `$direction` は "min" または "max" のどちらかを指定
+@mixin media-query($breakpoint-name, $direction: "min") {
+  // マップからブレイクポイントの値を取得、もしくは数値として直接指定
+  $size: if(
+    map-has-key($screen, $breakpoint-name),
+    map-get($screen, $breakpoint-name),
+    $breakpoint-name
+  );
+
+  // "min" 方向のメディアクエリの場合、範囲が重複しないように 1px を足す
+  @if $direction == "min" {
+    $size: $size + 1px;
+  }
+
+  @media only screen and (#{$direction}-width: $size) {
+    @content;
+  }
+}

@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+@use "./globals/variables";
+@use "./globals/reset";
+@use "./globals/base";
+
+@use "./sass/@index" as *;
+
+@use "./utils/@index" as *;
+@use "./components/@index" as *;
+@use "./pages/@index" as *;

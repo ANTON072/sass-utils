@@ -2,4 +2,6 @@
 
 .sample {
   @include triangle(upward, 20px, 15px, #cd5c5c);
+
+  font-size: 3px;
 }

@@ -1,5 +1,5 @@
 @use "../sass/@index" as *;
 
 .sample {
-  line-height: line-height(32px, 57px);
+  animation: animation-foo 1s ease(out-expo) .4s both;
 }

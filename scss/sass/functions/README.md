@@ -95,3 +95,23 @@ output
   line-height: 1.78;
 }
 ```
+
+## easing
+
+3次ベジェ曲線のイージングを取得する関数
+
+input
+
+```scss
+.sample {
+  animation: animation-foo 1s ease(out-expo) 0.4s both;
+}
+```
+
+output
+
+```css
+.sample {
+  animation: animation-foo 1s cubic-bezier(0.19, 1, 0.22, 1) 0.4s both;
+}
+```

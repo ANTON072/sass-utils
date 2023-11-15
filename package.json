@@ -1,5 +1,8 @@
 {
   "name": "sass-utils",
+  "browserslist": [
+    "iOS >= 15"
+  ],
   "scripts": {
     "build": "sass --source-map scss/main.scss css/main.css && postcss css/main.css --output css/main.css",
     "build:production": "sass --source-map scss/main.scss css/main.css && NODE_ENV=production postcss css/main.css --output css/main.css",
@@ -14,6 +17,7 @@
     "sass": "^1.69.5",
     "stylelint": "^15.11.0",
     "stylelint-config-recess-order": "^4.3.0",
-    "stylelint-config-standard-scss": "^11.1.0"
+    "stylelint-config-standard-scss": "^11.1.0",
+    "stylelint-no-unsupported-browser-features": "^7.0.0"
   }
 }

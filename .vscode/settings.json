@@ -7,7 +7,7 @@
       "source.fixAll.stylelint": true
     }
   },
-  "stylelint.configFile": "./.stylelintrc",
+  "stylelint.configFile": "./.stylelintrc.js",
   "stylelint.validate": ["scss"],
   "cSpell.words": ["stylelint"]
 }

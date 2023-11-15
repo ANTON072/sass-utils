@@ -5,6 +5,7 @@
 }
 
 html {
+  /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
   height: fill-available;
 
   // スマホを横にしても文字サイズを大きくしない
@@ -26,8 +27,10 @@ dd {
 
 body {
   min-height: 100vh;
+  /* stylelint-disable plugin/no-unsupported-browser-features */
   min-height: fill-available;
   overflow-x: hidden;
+  /* stylelint-enable plugin/no-unsupported-browser-features */
   line-height: 1.5;
 
 }
@@ -55,6 +58,7 @@ h4 {
 }
 
 a:not([class]) {
+  /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
   text-decoration-skip-ink: auto;
   color: currentcolor;
 }
@@ -85,6 +89,7 @@ textarea:not([rows]) {
 }
 
 svg {
+  /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
   overflow: visible;
   fill: currentcolor;
 }

@@ -1,10 +1,11 @@
+@use "sass:map";
 @use "../variables/@index" as *;
 
 // 3次ベジェ曲線のイージングを取得する関数
 // @param $easing: イージング名
 @function ease($easing) {
-  @if map-has-key($easings, $easing) {
-    @return map-get($easings, $easing);
+  @if map.has-key($easings, $easing) {
+    @return map.get($easings, $easing);
   }
 
   // 定義されていないイージングが指定された時は警告を出して初期値のeaseを返す

@@ -1,3 +1,6 @@
+@use "sass:map";
+@use "../sass/@index" as *;
+
 :root {
   // Colors
   --color-blue: #0d6efd;
@@ -16,4 +19,11 @@
   // Fonts
   --font-base: "Hiragino Kaku Gothic ProN", "Hiragino Sans", meiryo,
     sans-serif;
+
+  // Media queries
+  --mq-sm: #{map.get($screen, "sm")};
+  --mq-md: #{map.get($screen, "md")};
+  --mq-lg: #{map.get($screen, "lg")};
+  --mq-xl: #{map.get($screen, "xl")};
+  --mq-xxl: #{map.get($screen, "xxl")};
 }
